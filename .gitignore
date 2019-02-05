@@ -1,3 +1,9 @@
+# Production
+build
+
+### MAC Stuff ###
+.DS_Store
+
 # Logs
 logs
 *.log
