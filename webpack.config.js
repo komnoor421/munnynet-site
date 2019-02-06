@@ -38,5 +38,11 @@ module.exports = {
     }),
     new OptimizeCssAssetsPlugin({}),
     new CleanWebpackPlugin('build')
-  ]
+  ],
+  devServer: {
+    contentBase: path.join(__dirname, 'public'),
+    host: 'localhost',
+    port: 3000,
+    historyApiFallback: true
+  }
 };
