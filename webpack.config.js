@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -27,6 +28,32 @@ module.exports = {
           'sass-loader'
         ]
       },
+      {
+        test: /\.(png|jpg|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'resources/images',
+              publicPath: 'resources/images',
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(ttf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'resources/fonts',
+              publicPath: '../../resources/fonts',
+            }
+          }
+        ]
+      }
     ]
   },
   plugins: [
@@ -37,6 +64,9 @@ module.exports = {
       filename: 'css/main.css'
     }),
     new OptimizeCssAssetsPlugin({}),
+    new CopyWebpackPlugin([
+      { from: 'public/resources/fonts', to: 'resources/fonts' }
+    ]),
     new CleanWebpackPlugin('build')
   ],
   devServer: {

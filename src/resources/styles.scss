@@ -1,7 +1,18 @@
 body {
-  background-color: pink;
+  @extend %fontRegular;
+}
 
-  h1 {
-    font-size: 40px;
-  }
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../public/resources/fonts/Poppins-Regular.ttf');
+}
+
+$noto: 'Poppins', sans-serif;
+
+%fontRegular {
+  font-family: $noto;
+  font-style: normal;
+  font-weight: 400;
 }
