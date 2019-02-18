@@ -1,5 +1,8 @@
 body {
   @extend %fontRegular;
+  h2 {
+    color: black;
+  }
 }
 
 @font-face {
@@ -15,4 +18,19 @@ $noto: 'Poppins', sans-serif;
   font-family: $noto;
   font-style: normal;
   font-weight: 400;
+}
+
+$blue: #000099;
+
+.applyButton {
+  background-color: $blue;
+  border-color: $blue;
+  &:hover {
+    background-color: lighten($blue, 20%);
+  }
+}
+
+.container-fluid {
+  margin-left: 60px;
+  margin-right: 60px;
 }

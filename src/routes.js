@@ -6,8 +6,6 @@ import Qualifications from './components/Qualifications';
 import Products from './components/Products';
 import Contact from './components/Contact';
 
-import './resources/styles.scss';
-
 class Routes extends React.Component {
   render() {
     return (
