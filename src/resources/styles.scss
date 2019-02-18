@@ -34,3 +34,9 @@ $blue: #000099;
   margin-left: 60px;
   margin-right: 60px;
 }
+
+#mainContent {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 65px);
+}
