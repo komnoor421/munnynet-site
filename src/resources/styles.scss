@@ -23,6 +23,7 @@ $noto: 'Poppins', sans-serif;
 $blue: #000099;
 
 .applyButton {
+  padding: 10px 20px;
   background-color: $blue;
   border-color: $blue;
   &:hover {
@@ -38,5 +39,6 @@ $blue: #000099;
 #mainContent {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 65px);
+  min-height: 100vh;
+  padding-top: 70px;
 }
