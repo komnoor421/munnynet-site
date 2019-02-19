@@ -1,17 +1,59 @@
 #homeWrapper {
-  display: flex;
-  flex: 1;
+  // display: flex;
+  // flex-direction: column;
+  // min-height: 100vh;
   .jumbotron {
-    flex: 1;
+    // flex: 1;
+    min-height: calc(100vh - 70px);
     margin-bottom: 0;
     h1 {
       color: #000099
     }
+    .mainButton {
+      text-align: center;
+      margin-top: 3rem;
+      .cta {
+        padding: 20px 40px;
+        font-size: 25px;
+      }
+    }
   }
-  .mainButton {
+  #stepSection {
+    .container-fluid {
+      margin: 0;
+    }
     text-align: center;
-    margin-top: 2.5rem;
-    .cta {
+    padding: 40px 0;
+    h2 {
+      margin-bottom: 1.5rem;
+      font-size: 40px;
+    }
+    .step {
+      i {
+        margin-bottom: 15px;
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+  #ctaSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    min-height: 350px;
+    background-color: #000099;
+    h2 {
+      font-size: 45px;
+      color: white;
+      margin-bottom: 3rem;
+    }
+    .ctaBig {
+      background-color: white;
+      border-color: white;
+      color: #000099;
       padding: 20px 40px;
       font-size: 25px;
     }

@@ -24,6 +24,37 @@ class Home extends Component {
             <button type="button" className="applyButton cta btn btn-primary">Get Started</button>
           </div>
         </div>
+        <section id='stepSection'>
+          <div className='container-fluid'>
+            <h2>How It Works</h2>
+            <div className='row'>
+              <div className='step col-md-4'>
+                <i className="fas fa-laptop fa-3x"></i>
+                <p>Apply Online</p>
+              </div>
+              <div className='step col-md-4'>
+                <i className="fas fa-user-tie fa-3x"></i>
+                <p>
+                  Get Connected to a Trusted Advisor
+                  <br />
+                  For Approval in 24-48 Hours
+                </p>
+              </div>
+              <div className='step col-md-4'>
+                <i className="fas fa-hand-holding-usd fa-3x"></i>
+                <p>
+                  Have Funds In Your Account
+                  <br />
+                  Within 3 Days
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="ctaSection">
+          <h2>Get Pre-Approved Today!</h2>
+          <button type="button" className="applyButton ctaBig btn btn-primary">Get Started</button>
+        </section>
       </div>
     );
   }
