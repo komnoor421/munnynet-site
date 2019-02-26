@@ -15,10 +15,10 @@ class Home extends Component {
   render() {
     return (
       <div id='homeWrapper'>
-        <div className='jumbotron' style={jumboBgStyle}>
+        <div className='jumbotron text-center' style={jumboBgStyle}>
           <div className='jumboHeader'>
-            <h1 className="display-4 text-center">MunnyNet Business Loans</h1>
-            <h1 className="display-3 text-center">help when Bank Loans Cannot</h1>
+            <h1 className="display-4">MunnyNest Business Loans</h1>
+            <h1 className="display-3">help when Bank Loans Cannot</h1>
           </div>
           <div className='mainButton'>
             <button type="button" className="applyButton cta btn btn-primary">Get Started</button>

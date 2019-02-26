@@ -33,6 +33,10 @@ class Header extends Component {
             </ul>
           </nav>
           <div className='headerRight'>
+            <a href='#' className='phoneNav'>
+              <i className="fas fa-phone"></i>
+              (800) XXX-XXXX
+            </a>
             <button type="button" className="applyButton btn btn-primary">Get Started</button>
           </div>
         </div>

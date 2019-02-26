@@ -1,0 +1,15 @@
+#contactUsWrapper {
+  .jumbotron {
+    margin-bottom: 0;
+    min-height: 325px;
+    .jumboHeader {
+      display: inline-block;
+      background: rgba(255,255,255,0.7);
+      padding: 20px 30px;
+      margin-top: 35px;
+      h1 {
+        color: #000099
+      }
+    }
+  }
+}

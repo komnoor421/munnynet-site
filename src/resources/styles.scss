@@ -3,6 +3,9 @@ body {
   h2 {
     color: black;
   }
+  h1 {
+    // margin-bottom: 0
+  }
 }
 
 @font-face {
@@ -10,6 +13,10 @@ body {
   font-style: normal;
   font-weight: 400;
   src: url('../../public/resources/fonts/Poppins-Regular.ttf');
+}
+
+section {
+  padding: 50px 0;
 }
 
 $noto: 'Poppins', sans-serif;
@@ -28,6 +35,28 @@ $blue: #000099;
   border-color: $blue;
   &:hover {
     background-color: lighten($blue, 20%);
+  }
+}
+
+#ctaSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  min-height: 350px;
+  background-color: #000099;
+  h2 {
+    font-size: 45px;
+    color: white;
+    margin-bottom: 3rem;
+  }
+  .ctaBig {
+    background-color: white;
+    border-color: white;
+    color: #000099;
+    padding: 20px 40px;
+    font-size: 25px;
   }
 }
 

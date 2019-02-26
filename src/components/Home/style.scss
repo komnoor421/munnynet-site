@@ -6,8 +6,13 @@
     // flex: 1;
     min-height: calc(100vh - 70px);
     margin-bottom: 0;
-    h1 {
-      color: #000099
+    .jumboHeader {
+      display: inline-block;
+      background: rgba(255,255,255,0.7);
+      padding: 20px 30px;
+      h1 {
+        color: #000099
+      }
     }
     .mainButton {
       text-align: center;
@@ -35,27 +40,6 @@
       p {
         font-size: 18px;
       }
-    }
-  }
-  #ctaSection {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    min-height: 350px;
-    background-color: #000099;
-    h2 {
-      font-size: 45px;
-      color: white;
-      margin-bottom: 3rem;
-    }
-    .ctaBig {
-      background-color: white;
-      border-color: white;
-      color: #000099;
-      padding: 20px 40px;
-      font-size: 25px;
     }
   }
 }

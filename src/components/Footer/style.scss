@@ -1,4 +1,17 @@
 #footer {
   background: #ddd;
-  padding: 15px 30px;
+  padding: 30px;
+  .social {
+    margin-bottom: 10px;
+    i {
+      margin: 0 9px;
+      font-size: 35px;
+    }
+  }
+  .copyrightWrapper {
+    .copyrightContent {
+      max-width: 550px;
+      margin: 0 auto;
+    }
+  }
 }
