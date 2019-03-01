@@ -12,4 +12,24 @@
       }
     }
   }
+  .qualify3 {
+    h2 {
+      text-decoration: underline;
+      margin-bottom: 40px;
+    }
+    .typesList {
+      display: flex;
+      flex-direction: column;
+      .step {
+        display: flex;
+        margin-bottom: 30px;
+        .stepPoints {
+          margin-left: 15px;
+          ul {
+            margin-left: 50px;
+          }
+        }
+      }
+    }
+  }
 }

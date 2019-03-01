@@ -20,12 +20,12 @@ class Qualifications extends Component {
             <h1 className="display-3">Qualifications</h1>
           </div>
         </div>
-        <section id='qualify2'>
+        <section className='qualify2'>
           <div className="container">
             <h2>At MunnyNest, we work hard to get the best possible loan & offer for your Business, considering all aspects of your given information with our trusted & professional advisors.</h2>
           </div>
         </section>
-        <section id='qualify3'>
+        <section className='qualify3'>
           <div className='container'>
             <div className='row noInfo'>
               <div className='col-md-4 col-sm-12 text-center align-self-center'>
