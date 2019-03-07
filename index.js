@@ -1,13 +1,26 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
 const path = require('path');
 const port = process.env.PORT || 5000;
 
 const app = express();
 
-app.get('/server', (req, res) => {
+//Body Parser
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+//Test Route
+app.get('/hello', (req, res) => {
   res.send('Hello World');
 });
 
+//Email Post Route
+app.post('/send', (req, res) => {
+  console.log(req.body);
+});
+
+//Serving Production
 if(process.env.NODE_ENV == 'production') {
   app.disable('x-powered-by');
   app.use(express.static(path.join(__dirname, 'client/build')));

@@ -73,6 +73,9 @@ module.exports = {
     contentBase: path.join(__dirname, 'public'),
     host: 'localhost',
     port: 3000,
-    historyApiFallback: true
+    historyApiFallback: true,
+    proxy: {
+      '/send': 'http://localhost:5000'
+    }
   }
 };
