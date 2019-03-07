@@ -10,7 +10,7 @@
     "client-dev": "cd client && npm run dev",
     "client-build": "cd client && npm run build:prod",
     "server-dev": "nodemon index.js",
-    "heroku-prebuild": "npm run client-install",
+    "heroku-prebuild": "export NPM_CONFIG_PRODUCTION=false; npm run client-install",
     "heroku-postbuild": "npm run client-build"
   },
   "repository": {
