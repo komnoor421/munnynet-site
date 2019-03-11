@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import bg from '../../../public/resources/images/jumbo-bg.jpg';
 
@@ -21,7 +22,9 @@ class Home extends Component {
             <h1 className="display-3">help when Bank Loans Cannot</h1>
           </div>
           <div className='mainButton'>
-            <button type="button" className="applyButton cta btn btn-primary">Get Started</button>
+            <Link to="/contact">
+              <button type="button" className="applyButton cta btn btn-primary">Get Started</button>
+            </Link>
           </div>
         </div>
         <section id='stepSection'>
@@ -53,7 +56,9 @@ class Home extends Component {
         </section>
         <section id="ctaSection">
           <h2>Get Pre-Approved Today!</h2>
-          <button type="button" className="applyButton ctaBig btn btn-primary">Get Started</button>
+          <Link to="/contact">
+            <button type="button" className="applyButton ctaBig btn btn-primary">Get Started</button>
+          </Link>
         </section>
       </div>
     );

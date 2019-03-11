@@ -37,7 +37,9 @@ class Header extends Component {
               <i className="fas fa-phone"></i>
               (833) MUN-YNST
             </a>
-            <button type="button" className="applyButton btn btn-primary">Get Started</button>
+            <Link to="/contact">
+              <button type="button" className="applyButton btn btn-primary">Get Started</button>
+            </Link>
           </div>
         </div>
       </header>
