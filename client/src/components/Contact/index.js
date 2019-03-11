@@ -17,6 +17,8 @@ class Contact extends Component {
 
     this.state = {
       name: '',
+      bizname: '',
+      biztype: '',
       phone: '',
       email: '',
       message: ''
@@ -35,14 +37,13 @@ class Contact extends Component {
 
   sendEmail(e) {
     e.preventDefault();
-    const { name, phone, email, message } = this.state;
+    const { name, bizname, biztype, phone, email, message } = this.state;
     fetch('/send', {
       method: 'POST',
       headers: {
-        "Accept": 'application/json , text/plain',
-        "Content-type": "application/x-www-form-urlencoded"
+        "Content-type": "application/json"
       },
-      body: JSON.stringify({name: name, phone: phone, email: email, message: message})
+      body: JSON.stringify({name: name, bizname: bizname, biztype: biztype, phone: phone, email: email, message: message})
     }).then(function (res){
       console.log(res);
     }).catch(function (err) {
@@ -51,7 +52,6 @@ class Contact extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div id='contactUsWrapper'>
         <div className='jumbotron text-center' style={contentBgStyle}>
@@ -63,8 +63,16 @@ class Contact extends Component {
           <div className="container">
           <form id='contactForm' onSubmit={this.sendEmail}>
             <div className="form-group">
-              <label htmlFor="fullName">Full Name</label>
-              <input type="text" className="form-control" id="fullName" placeholder="Enter Name" name='name' onChange={this.handleChange} />
+              <label htmlFor="fullName">Full Name / Business Owner</label>
+              <input type="text" className="form-control" id="fullName" placeholder="Enter Name" name='name' required onChange={this.handleChange} />
+            </div>
+            <div className="form-group">
+              <label htmlFor="fullName">Business Name</label>
+              <input type="text" className="form-control" id="bizName" placeholder="Enter Name" name='bizname' onChange={this.handleChange} />
+            </div>
+            <div className="form-group">
+              <label htmlFor="fullName">Business Type</label>
+              <input type="text" className="form-control" id="bizType" placeholder="Enter Name" name='biztype' onChange={this.handleChange} />
             </div>
             <div className="form-group">
               <label htmlFor="phone">Phone</label>
