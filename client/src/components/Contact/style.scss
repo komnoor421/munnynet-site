@@ -12,4 +12,24 @@
       }
     }
   }
+  .contactFormSection {
+    .formInfo {
+      display: flex;
+      justify-content: flex-end;
+      color: gray;
+    }
+    #contactForm {
+      .submitButtonWrapper {
+        display: flex;
+        justify-content: center;
+        #submitFormButton {
+          padding: 15px 25px;
+          font-size: 20px;
+          &:disabled {
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
 }

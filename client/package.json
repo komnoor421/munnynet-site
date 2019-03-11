@@ -19,6 +19,7 @@
     "express": "^4.16.4",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-phone-number-input": "^2.3.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1"
   },
