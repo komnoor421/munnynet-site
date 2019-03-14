@@ -33,7 +33,7 @@ app.post('/send', (req, res) => {
      }
    });
 
-   const emailHtmlTemplate = `
+   const emailHtmlTemplateMunnyNest = `
       <h3>New Prospect<h3>
       <ul>
         <li>Prospect #${req.body.id}</li>
@@ -45,21 +45,40 @@ app.post('/send', (req, res) => {
         <li>Email: ${req.body.email}</li>
         <li>Message: ${req.body.message}</li>
       <ul>
-   `
+   `;
+
+   const emailHtmlTemplateConfirmation = `
+      <h2>Hello ${req.body.name}!<h2>
+      <p>Thank you for your interest and submission of your pre-qual application.</p>
+      <p>One of our advisors will be contacting you within 24-48 hours.</p>
+   `;
 
    // setup email data with unicode symbols
-   let mailOptions = {
+   let mailOptionsMunnyNest = {
      from: 'info@munnynest.com', // sender address
      to: 'info@munnynest.com', // list of receivers
      subject: 'New Prospect - ' + req.body.name, // Subject line
-     html: emailHtmlTemplate // html body
+     html: emailHtmlTemplateMunnyNest // html body
+   };
+
+   console.log("Recipient email", req.body.email);
+
+   let mailOptionsConfirmation = {
+     from: 'info@munnynest.com', // sender address
+     to: req.body.email, // list of receivers
+     subject: 'Pre-Qual Application #' + req.body.id, // Subject line
+     html: emailHtmlTemplateConfirmation // html body
    };
 
    try {
-     // send mail with defined transport object
-     let info = await transporter.sendMail(mailOptions);
-     console.log("Message sent: %s", info.messageId);
-     res.status(200).json({ emailSent: true, status: 200, emailInfo: info });
+     // // send mail with defined transport object
+     let infoMN = await transporter.sendMail(mailOptionsMunnyNest);
+     console.log("Message sent to MunnyNest: %s", infoMN.messageId);
+     res.status(200).json({ emailSent: true, status: 200, emailInfo: infoMN });
+
+     //send confirmation email
+     let infoConfirmation = await transporter.sendMail(mailOptionsConfirmation);
+     console.log("Message sent to recipient: %s", infoConfirmation.messageId);
    } catch (err) {
      console.error(err);
      res.status(500).json({ emailSent: false, status: 500, error: err});
