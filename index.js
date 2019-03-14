@@ -21,12 +21,12 @@ app.post('/send', (req, res) => {
   async function main() {
     // create reusable transporter object using the default SMTP transport
    let transporter = nodemailer.createTransport({
-     host: 'smtp.office365.com',
-     port: 587,
+     host: '',
+     port: ,
      secure: false, // true for 465, false for other ports
      auth: {
-       user: 'info@munnynest.com',
-       pass: 'yasamanrose23&'
+       user: '',
+       pass: ''
      },
      tls: {
        rejectUnathorized: false
@@ -55,8 +55,8 @@ app.post('/send', (req, res) => {
 
    // setup email data with unicode symbols
    let mailOptionsMunnyNest = {
-     from: 'info@munnynest.com', // sender address
-     to: 'info@munnynest.com', // list of receivers
+     from: '', // sender address
+     to: '', // list of receivers
      subject: 'New Prospect - ' + req.body.name, // Subject line
      html: emailHtmlTemplateMunnyNest // html body
    };
@@ -70,19 +70,19 @@ app.post('/send', (req, res) => {
      html: emailHtmlTemplateConfirmation // html body
    };
 
-   try {
-     // // send mail with defined transport object
-     let infoMN = await transporter.sendMail(mailOptionsMunnyNest);
-     console.log("Message sent to MunnyNest: %s", infoMN.messageId);
-     res.status(200).json({ emailSent: true, status: 200, emailInfo: infoMN });
-
-     //send confirmation email
-     let infoConfirmation = await transporter.sendMail(mailOptionsConfirmation);
-     console.log("Message sent to recipient: %s", infoConfirmation.messageId);
-   } catch (err) {
-     console.error(err);
-     res.status(500).json({ emailSent: false, status: 500, error: err});
-   }
+   // try {
+   //   // // send mail with defined transport object
+   //   let infoMN = await transporter.sendMail(mailOptionsMunnyNest);
+   //   console.log("Message sent to MunnyNest: %s", infoMN.messageId);
+   //   res.status(200).json({ emailSent: true, status: 200, emailInfo: infoMN });
+   //
+   //   //send confirmation email
+   //   let infoConfirmation = await transporter.sendMail(mailOptionsConfirmation);
+   //   console.log("Message sent to recipient: %s", infoConfirmation.messageId);
+   // } catch (err) {
+   //   console.error(err);
+   //   res.status(500).json({ emailSent: false, status: 500, error: err});
+   // }
  }
 
  main();
