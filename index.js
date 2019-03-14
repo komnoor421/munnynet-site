@@ -26,7 +26,7 @@ app.post('/send', (req, res) => {
      secure: false, // true for 465, false for other ports
      auth: {
        user: 'info@munnynest.com',
-       pass: 'Yasaman21!'
+       pass: 'yasamanrose23&'
      },
      tls: {
        rejectUnathorized: false
@@ -36,9 +36,11 @@ app.post('/send', (req, res) => {
    const emailHtmlTemplate = `
       <h3>New Prospect<h3>
       <ul>
+        <li>Prospect #${req.body.id}</li>
         <li>Owner Name: ${req.body.name}</li>
         <li>Business Name: ${req.body.bizname}</li>
         <li>Business Type: ${req.body.biztype}</li>
+        <li>Amount Requested: ${req.body.amount}</li>
         <li>Phone Number: ${req.body.phone}</li>
         <li>Email: ${req.body.email}</li>
         <li>Message: ${req.body.message}</li>
@@ -53,13 +55,18 @@ app.post('/send', (req, res) => {
      html: emailHtmlTemplate // html body
    };
 
-   // send mail with defined transport object
-   let info = await transporter.sendMail(mailOptions)
-
-   console.log("Message sent: %s", info.messageId);
+   try {
+     // send mail with defined transport object
+     let info = await transporter.sendMail(mailOptions);
+     console.log("Message sent: %s", info.messageId);
+     res.status(200).json({ emailSent: true, status: 200, emailInfo: info });
+   } catch (err) {
+     console.error(err);
+     res.status(500).json({ emailSent: false, status: 500, error: err});
+   }
  }
 
- main().catch(console.error);
+ main();
 });
 
 //Serving Production

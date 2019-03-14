@@ -10,6 +10,21 @@
     }
   }
   .copyrightWrapper {
+    .countries {
+      display: flex;
+      justify-content: center;
+      p {
+        display: flex;
+        align-items: center;
+        &:first-child {
+          margin-right: 15px;
+        }
+      }
+      img {
+        width: 40px;
+        margin-right: 5px;
+      }
+    }
     .copyrightContent {
       max-width: 550px;
       margin: 0 auto;

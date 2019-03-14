@@ -15,6 +15,16 @@ body {
   src: url('../../public/resources/fonts/Poppins-Regular.ttf');
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-group > .form-control:focus {
+  z-index: 0;
+}
+
 section {
   padding: 50px 0;
 }
@@ -40,6 +50,10 @@ $blue: #000099;
   &:hover {
     background-color: lighten($blue, 20%);
   }
+}
+
+.jumbotron {
+  border-radius: 0px;
 }
 
 #ctaSection {
