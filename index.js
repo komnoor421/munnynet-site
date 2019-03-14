@@ -20,18 +20,18 @@ app.post('/send', (req, res) => {
 
   async function main() {
     // create reusable transporter object using the default SMTP transport
-   let transporter = nodemailer.createTransport({
-     host: '',
-     port: ,
-     secure: false, // true for 465, false for other ports
-     auth: {
-       user: '',
-       pass: ''
-     },
-     tls: {
-       rejectUnathorized: false
-     }
-   });
+   // let transporter = nodemailer.createTransport({
+   //   host: '',
+   //   port: ,
+   //   secure: false, // true for 465, false for other ports
+   //   auth: {
+   //     user: '',
+   //     pass: ''
+   //   },
+   //   tls: {
+   //     rejectUnathorized: false
+   //   }
+   // });
 
    const emailHtmlTemplateMunnyNest = `
       <h3>New Prospect<h3>
@@ -61,7 +61,7 @@ app.post('/send', (req, res) => {
      html: emailHtmlTemplateMunnyNest // html body
    };
 
-   console.log("Recipient email", req.body.email);
+   //console.log("Recipient email", req.body.email);
 
    let mailOptionsConfirmation = {
      from: 'info@munnynest.com', // sender address
@@ -85,7 +85,7 @@ app.post('/send', (req, res) => {
    // }
  }
 
- main();
+ //main();
 });
 
 //Serving Production

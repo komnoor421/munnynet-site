@@ -57,35 +57,35 @@ class Contact extends Component {
     e.preventDefault();
     const that = this;
     const { name, bizname, biztype, amount, phone, email, message, emailSuccess, emailFail } = this.state;
-    this.setState({ loading: true });
-    fetch('/send', {
-      method: 'POST',
-      headers: {
-        "Content-type": "application/json"
-      },
-      body: JSON.stringify({
-        id: Math.floor(1000 + Math.random() * 9000),
-        name: name,
-        bizname: bizname,
-        biztype: biztype,
-        amount: amount,
-        phone: phone,
-        email: email,
-        message: message
-      })
-    }).then(function (res){
-      return res.json();
-    }).then(function (data) {
-      if(data.emailSent) {
-        that.setState(initialState);
-        that.setState({emailSuccess: true});
-      } else {
-        that.setState(initialState);
-        that.setState({emailFail: true});
-      }
-    }).catch(function (err) {
-      console.log(err);
-    });
+    // this.setState({ loading: true });
+    // fetch('/send', {
+    //   method: 'POST',
+    //   headers: {
+    //     "Content-type": "application/json"
+    //   },
+    //   body: JSON.stringify({
+    //     id: Math.floor(1000 + Math.random() * 9000),
+    //     name: name,
+    //     bizname: bizname,
+    //     biztype: biztype,
+    //     amount: amount,
+    //     phone: phone,
+    //     email: email,
+    //     message: message
+    //   })
+    // }).then(function (res){
+    //   return res.json();
+    // }).then(function (data) {
+    //   if(data.emailSent) {
+    //     that.setState(initialState);
+    //     that.setState({emailSuccess: true});
+    //   } else {
+    //     that.setState(initialState);
+    //     that.setState({emailFail: true});
+    //   }
+    // }).catch(function (err) {
+    //   console.log(err);
+    // });
   }
 
   render() {
@@ -98,14 +98,6 @@ class Contact extends Component {
             <h1 className="display-3">Contact Us</h1>
           </div>
         </div>
-        <section className='contactInfoSection'>
-          <a href='tel:8336869678' className='phoneButton'>
-            (833) MUN-YNST
-          </a>
-          <a href="mailto:info@munnynest.com?subject=Pre-Qual Inquiry" className='emailButton'>
-            info@munnynest.com
-          </a>
-        </section>
         <section className='contactPrompt'>
           <div className="container text-center">
             <h3>You can contact us by Phone, E-mail or both. We're here to assist and answer any questions about our company & process.</h3>
