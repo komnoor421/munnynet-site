@@ -142,10 +142,7 @@ class Contact extends Component {
                 <strong>There was a problem sending your Email. Please try again later.</strong>
               </div>}
               <div className='submitButtonWrapper'>
-                <button disabled={!isValid} id='submitFormButton' type="submit" className="applyButton btn btn-primary align-items-center">
-                  {loading && <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>}
-                  Apply Now
-                </button>
+                
               </div>
             </form>
           </div>

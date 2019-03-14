@@ -64,7 +64,7 @@ app.post('/send', (req, res) => {
    //console.log("Recipient email", req.body.email);
 
    let mailOptionsConfirmation = {
-     from: 'info@munnynest.com', // sender address
+     from: '', // sender address
      to: req.body.email, // list of receivers
      subject: 'Pre-Qual Application #' + req.body.id, // Subject line
      html: emailHtmlTemplateConfirmation // html body
