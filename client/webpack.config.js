@@ -65,7 +65,8 @@ module.exports = {
     }),
     // new OptimizeCssAssetsPlugin({}),
     new CopyWebpackPlugin([
-      { from: 'public/resources/fonts', to: 'resources/fonts' }
+      { from: 'public/resources/fonts', to: 'resources/fonts' },
+      { from: 'public/favicon.png'}
     ]),
     new CleanWebpackPlugin('build')
   ],
