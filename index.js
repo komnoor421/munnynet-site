@@ -1,37 +1,36 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const env = require('dotenv');
 const path = require('path');
 const port = process.env.PORT || 5000;
 
 const app = express();
 
+env.config();
+
 //Body Parser
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-//Test Route
-// app.get('/hello', (req, res) => {
-//   res.send('Hello World');
-// });
 
 //Email Post Route
 app.post('/send', (req, res) => {
 
   async function main() {
     // create reusable transporter object using the default SMTP transport
-   // let transporter = nodemailer.createTransport({
-   //   host: '',
-   //   port: ,
-   //   secure: false, // true for 465, false for other ports
-   //   auth: {
-   //     user: '',
-   //     pass: ''
-   //   },
-   //   tls: {
-   //     rejectUnathorized: false
-   //   }
-   // });
+   let transporter = nodemailer.createTransport({
+     host: process.env.EMAIL_HOST,
+     port: process.env.EMAIL_PORT,
+     secure: false, // true for 465, false for other ports
+     auth: {
+       user: process.env.EMAIL_USERNAME,
+       pass: process.env.EMAIL_PASSWORD
+     },
+     tls: {
+       rejectUnauthorized: true
+     },
+     requireTLS: true
+   });
 
    const emailHtmlTemplateMunnyNest = `
       <h3>New Prospect<h3>
@@ -55,8 +54,8 @@ app.post('/send', (req, res) => {
 
    // setup email data with unicode symbols
    let mailOptionsMunnyNest = {
-     from: '', // sender address
-     to: '', // list of receivers
+     from: process.env.EMAIL_USERNAME, // sender address
+     to: process.env.EMAIL_USERNAME, // list of receivers
      subject: 'New Prospect - ' + req.body.name, // Subject line
      html: emailHtmlTemplateMunnyNest // html body
    };
@@ -64,28 +63,29 @@ app.post('/send', (req, res) => {
    //console.log("Recipient email", req.body.email);
 
    let mailOptionsConfirmation = {
-     from: '', // sender address
+     from: process.env.EMAIL_USERNAME, // sender address
      to: req.body.email, // list of receivers
      subject: 'Pre-Qual Application #' + req.body.id, // Subject line
      html: emailHtmlTemplateConfirmation // html body
    };
 
-   // try {
-   //   // // send mail with defined transport object
-   //   let infoMN = await transporter.sendMail(mailOptionsMunnyNest);
-   //   console.log("Message sent to MunnyNest: %s", infoMN.messageId);
-   //   res.status(200).json({ emailSent: true, status: 200, emailInfo: infoMN });
-   //
-   //   //send confirmation email
-   //   let infoConfirmation = await transporter.sendMail(mailOptionsConfirmation);
-   //   console.log("Message sent to recipient: %s", infoConfirmation.messageId);
-   // } catch (err) {
-   //   console.error(err);
-   //   res.status(500).json({ emailSent: false, status: 500, error: err});
-   // }
+   try {
+     // // send mail with defined transport object
+     let infoMN = await transporter.sendMail(mailOptionsMunnyNest);
+     console.log("Message sent to MunnyNest: %s", infoMN.messageId);
+     res.status(200).json({ emailSent: true, status: 200, emailInfo: infoMN });
+
+     //send confirmation email
+     let infoConfirmation = await transporter.sendMail(mailOptionsConfirmation);
+     console.log("Message sent to recipient: %s", infoConfirmation.messageId);
+   } catch (err) {
+     console.error(err);
+     res.status(500).json({ emailSent: false, status: 500, error: err});
+   }
  }
 
- //main();
+ main();
+
 });
 
 //Serving Production
@@ -97,4 +97,4 @@ if(process.env.NODE_ENV == 'production') {
   });
 }
 
-app.listen(port, () => console.log('Server started...'));
+app.listen(port, () => console.log('Server started on port ' + port + '...'));
