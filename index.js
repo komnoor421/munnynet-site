@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const env = require('dotenv');
+const request = require('request');
 const path = require('path');
 const port = process.env.PORT || 5000;
 
@@ -16,6 +17,33 @@ app.use(bodyParser.json());
 //Email Post Route
 app.post('/send', (req, res) => {
 
+  let notFilled = false;
+  let formatVerified = false;
+  let recaptchaVerified = false;
+
+  if(req.body.name && req.body.bizname && req.body.amount && req.body.phone && req.body.email) {
+    let phoneRegex = /^\+?\d{0,3}\s?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}?$/;
+    let emailRegex = /\S+@\S+\.\S+/;
+    formatVerified = phoneRegex.test(req.body.phone) && emailRegex.test(req.body.email);
+  } else {
+    notFilled = true;
+  }
+
+  function verifyRecaptcha() {
+    const recaptchaVerifyUrl = `https://google.com/recaptcha/api/siteverify?secret=${process.env.SECRET_KEY}&response=${req.body.recaptcha}&remoteip=${req.connection.remoteAddress}`;
+    request(recaptchaVerifyUrl, function (err, response, body) {
+      body = JSON.parse(body);
+
+      console.log(body);
+
+      if(body.success !== undefined && !body.success) {
+        res.status(500).json({ emailSent: false, verify: false, status: 500, clientError: 'reCaptcha failed. Please try again.'});
+      } else {
+        main();
+      }
+    });
+  }
+
   async function main() {
     // create reusable transporter object using the default SMTP transport
    let transporter = nodemailer.createTransport({
@@ -29,6 +57,7 @@ app.post('/send', (req, res) => {
      tls: {
        rejectUnauthorized: true
      },
+     ignoreTLS: false,
      requireTLS: true
    });
 
@@ -73,19 +102,26 @@ app.post('/send', (req, res) => {
      // // send mail with defined transport object
      let infoMN = await transporter.sendMail(mailOptionsMunnyNest);
      console.log("Message sent to MunnyNest: %s", infoMN.messageId);
-     res.status(200).json({ emailSent: true, status: 200, emailInfo: infoMN });
+     res.status(200).json({ emailSent: true, verify: true, status: 200, emailInfo: infoMN });
 
      //send confirmation email
      let infoConfirmation = await transporter.sendMail(mailOptionsConfirmation);
      console.log("Message sent to recipient: %s", infoConfirmation.messageId);
    } catch (err) {
      console.error(err);
-     res.status(500).json({ emailSent: false, status: 500, error: err});
+     res.status(500).json({ emailSent: false, verify: true, status: 500, error: err});
    }
  }
 
- main();
-
+ if(!notFilled) {
+   if (!formatVerified) {
+     res.status(500).json({ emailSent: false, verify: false, status: 500, clientError: 'Please enter valid phone & email.'});
+   } else {
+     verifyRecaptcha();
+   }
+ } else {
+   res.status(500).json({ emailSent: false, verify: false, status: 500, clientError: 'Form not filled with required fields.'});
+ }
 });
 
 //Serving Production

@@ -58,6 +58,11 @@
         .input-group {
           margin-bottom: 25px !important;
         }
+        #g-recaptcha {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 25px;
+        }
         .submitButtonWrapper {
           display: flex;
           justify-content: center;
