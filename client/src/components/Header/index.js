@@ -34,8 +34,12 @@ class Header extends Component {
           </nav>
           <div className='headerRight'>
             <a href='tel:8336869678' className='phoneNav'>
-              <i className="fas fa-phone"></i>
-              (833) MUN-YNST
+
+                <i className="fas fa-phone"></i>
+                <div className='phoneNums'>
+                  <span>(833) MUN-YNST</span>
+                  <span>(833) 686-9678</span>
+                </div>
             </a>
             <Link to="/contact">
               <button type="button" className="applyButton btn btn-primary">Get Started</button>
