@@ -12,12 +12,24 @@
       background: rgba(255,255,255,0.7);
       padding: 20px 30px;
       h1 {
-        color: #000099
+        color: #000099;
+        @media (max-width: 992px) {
+          font-size: 3rem;
+        }
+        @media (max-width: 768px) {
+          font-size: 2rem;
+        }
       }
     }
     .mainButton {
       text-align: center;
       margin-top: 3rem;
+      @media (max-width: 992px) {
+        margin-top: 11rem;
+      }
+      @media (max-width: 345px) {
+        margin-top: 2rem;
+      }
       .cta {
         padding: 20px 40px;
         font-size: 25px;

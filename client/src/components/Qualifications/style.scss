@@ -12,10 +12,23 @@
       }
     }
   }
+  .qualify2 {
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
   .qualify3 {
+    .noInfo {
+      @media (max-width: 768px) {
+        text-align: center;
+      }
+    }
     .listQual {
       margin-top: 40px;
       ol {
+        @media (max-width: 768px) {
+          margin-left: 45px;
+        }
         li {
           font-size: 25px;
         }

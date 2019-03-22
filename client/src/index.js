@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { App } from './components/App';
 
 import './resources/reset.css';
-import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './resources/styles.scss';
 
 const app = document.getElementById('app');
