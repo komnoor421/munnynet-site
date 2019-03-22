@@ -26,7 +26,17 @@ class Home extends Component {
               <button type="button" className="applyButton cta btn btn-primary">Get Started</button>
             </Link>
           </div>
+          <div className='downArrow'><i className="fas fa-chevron-down"></i></div>
         </div>
+        <section id='secondaryHeaderSection'>
+          <div className="container text-center">
+            <h2>
+              Simple, Fast and Personalized
+              <br />
+              approach to get Funds that can be used to solve your cash flow needs & to cover any expenses within your business.
+            </h2>
+          </div>
+        </section>
         <section id='stepSection'>
           <div className='container-fluid'>
             <h2>How It Works</h2>

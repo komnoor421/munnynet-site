@@ -6,6 +6,7 @@
     // flex: 1;
     min-height: calc(100vh - 70px);
     margin-bottom: 0;
+    position: relative;
     .jumboHeader {
       display: inline-block;
       background: rgba(255,255,255,0.7);
@@ -22,6 +23,19 @@
         font-size: 25px;
       }
     }
+    .downArrow {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      i {
+        color: white;
+        font-size: 40px;
+      }
+    }
+  }
+  #secondaryHeaderSection {
+    background: #f7f7f7;
   }
   #stepSection {
     .container-fluid {
