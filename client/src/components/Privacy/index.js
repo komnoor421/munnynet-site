@@ -49,7 +49,7 @@ class Privacy extends Component {
         <p>announcements of certain information. Users may opt-out of receiving any or all communications from third-party partners of Munny Nest LLC by contacting us here:</p>
         <ul>
           <li>Web page: <Link to='/'>www.munnynest.com</Link></li>
-          <li>Email: info@munnynest.com</li>
+          {/* <li>Email: info@munnynest.com</li> */}
           <li>Phone: 833.686.9648</li>
         </ul>
         <h4>E-mail Communications</h4>

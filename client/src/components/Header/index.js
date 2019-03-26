@@ -6,7 +6,26 @@ import logo from '../../../public/resources/images/logo-main.png';
 import './style.scss';
 
 class Header extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      menuVisible: false
+    }
+
+    this.toggleMenu = this.toggleMenu.bind(this);
+  }
+
+  toggleMenu() {
+    this.setState(
+      { menuVisible: !this.state.menuVisible }
+    );
+  }
+
   render() {
+    const that = this;
+
     return (
       <header>
         <div className='headerWrapper container-fluid'>
@@ -14,6 +33,7 @@ class Header extends Component {
             <Link to='/'>
               <img className='logo' src={logo} />
             </Link>
+            <i className="fas fa-bars menuButton menuInner" onClick={this.toggleMenu}></i>
             <ul>
               <li>
                 <Link to='/qualifications'>
@@ -45,6 +65,34 @@ class Header extends Component {
               <button type="button" className="applyButton btn btn-primary">Get Started</button>
             </Link>
           </div>
+        </div>
+        <div className='headerWrapper container-fluid navNarrow'
+        ref={function(el) {
+          if (el) {
+            if (that.state.menuVisible) {
+              return el.style.setProperty('display', 'block', 'important');
+            } else {
+              return el.style.setProperty('display', 'none', 'important');
+            }
+          }
+        }}>
+          <ul>
+            <li>
+              <Link to='/qualifications'>
+                Qualifications
+              </Link>
+            </li>
+            <li>
+              <Link to='/products'>
+                Loans & Products
+              </Link>
+            </li>
+            <li>
+              <Link to='/contact'>
+                Contact Us
+              </Link>
+            </li>
+          </ul>
         </div>
       </header>
     );
