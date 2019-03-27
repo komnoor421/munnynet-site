@@ -6,7 +6,7 @@ import bg from '../../../public/resources/images/jumbo-bg-2.jpg';
 import './style.scss';
 
 var contentBgStyle = {
-  background: `url(${bg}) center -75px`,
+  background: `url(${bg}) center top`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat'
 };
@@ -17,7 +17,7 @@ class Qualifications extends Component {
     return (
       <div id='qualificationsWrapper'>
         <div className='jumbotron text-center' style={contentBgStyle}>
-          <div className='jumboHeader'>
+          <div className='jumboHeader align-middle'>
             <h1 className="display-3">Qualifications</h1>
           </div>
         </div>

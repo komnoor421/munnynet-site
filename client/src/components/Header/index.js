@@ -15,6 +15,7 @@ class Header extends Component {
     }
 
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
   }
 
   toggleMenu() {
@@ -23,9 +24,14 @@ class Header extends Component {
     );
   }
 
+  closeMenu() {
+    this.setState(
+      { menuVisible: false }
+    );
+  }
+
   render() {
     const that = this;
-
     return (
       <header>
         <div className='headerWrapper container-fluid'>
@@ -78,7 +84,7 @@ class Header extends Component {
         }}>
           <ul>
             <div className='dropMenuTop'>
-              <Link to="/contact">
+              <Link to="/contact" onClick={this.closeMenu}>
                 <button type="button" className="applyButton btn btn-primary">Get Started</button>
               </Link>
               <a href='tel:8336869678' className='phoneNav'>
@@ -91,17 +97,17 @@ class Header extends Component {
               </a>
             </div>
             <li>
-              <Link to='/qualifications'>
+              <Link to='/qualifications' onClick={this.closeMenu}>
                 Qualifications
               </Link>
             </li>
             <li>
-              <Link to='/products'>
+              <Link to='/products' onClick={this.closeMenu}>
                 Loans & Products
               </Link>
             </li>
             <li>
-              <Link to='/contact'>
+              <Link to='/contact' onClick={this.closeMenu}>
                 Contact Us
               </Link>
             </li>

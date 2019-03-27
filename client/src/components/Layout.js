@@ -10,10 +10,10 @@ export class Layout extends React.Component {
     return (
       <div id='contentWrapper'>
         <ScrollToTop>
-            <Header />
-              <Routes />
-            <Footer />
-          </ScrollToTop>
+          <Header />
+            <Routes />
+          <Footer />
+        </ScrollToTop>
       </div>
     );
   }

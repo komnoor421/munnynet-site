@@ -6,7 +6,7 @@ import bg from '../../../public/resources/images/loans.jpg';
 import './style.scss';
 
 var contentBgStyle = {
-  background: `url(${bg}) center -190px`,
+  background: `url(${bg}) center center`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat'
 };
@@ -31,7 +31,7 @@ class Products extends Component {
             <h2 className='text-center'>These are the types of loans that are currently available on MunnyNest:</h2>
             <div className='typesList'>
               <div className='step'>
-                <span className="fa-stack fa-3x">
+                <span className="fa-stack fa-3x step">
                   <i className="far fa-circle fa-stack-2x"></i>
                   <strong className="fa-stack-1x">1</strong>
                 </span>
@@ -49,7 +49,7 @@ class Products extends Component {
                   <strong className="fa-stack-1x">2</strong>
                 </span>
                 <div className='stepPoints'>
-                  <h3>Revenue Assurance (RA) or Merchant Cash Advance (MCA)</h3>
+                  <h3>Revenue Assurance (RA) or <br />Merchant Cash Advance (MCA)</h3>
                   <ul>
                     <li>Lump Sum Advance based on Future Revenues</li>
                     <li>Higher Cost $$$</li>

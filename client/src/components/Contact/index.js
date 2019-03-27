@@ -29,7 +29,7 @@ const initialState = {
 }
 
 const contentBgStyle = {
-  background: `url(${bg}) center -110px`,
+  background: `url(${bg}) center top`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat'
 };
@@ -177,6 +177,7 @@ class Contact extends Component {
           <div className='jumboHeader'>
             <h1 className="display-3">Contact Us</h1>
           </div>
+          <div className='downArrow'><i className="fas fa-chevron-down"></i></div>
         </div>
         <section className='contactPrompt'>
           <div className="container text-center">

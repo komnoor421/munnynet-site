@@ -1,14 +1,26 @@
 #productsWrapper {
   .jumbotron {
     margin-bottom: 0;
-    min-height: 325px;
+    min-height: 400px;
+    @media (max-width: 992px) {
+      min-height: 300px;
+    }
     .jumboHeader {
       display: inline-block;
-      background: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.9);
       padding: 20px 30px;
       margin-top: 35px;
       h1 {
-        color: #000099
+        color: #000099;
+        @media (max-width: 768px) {
+          font-size: 3.5rem;
+        }
+        @media (max-width: 576px) {
+          font-size: 2.5rem;
+        }
+        @media (max-width: 450px) {
+          font-size: 2rem;
+        }
       }
     }
   }
@@ -26,10 +38,23 @@
       .step {
         display: flex;
         margin-bottom: 30px;
+        @media (max-width: 768px) {
+          flex-direction: column;
+          align-items: center;
+        }
         .stepPoints {
           margin-left: 15px;
+          h3 {
+            @media (max-width: 768px) {
+              text-align: center;
+            }
+          }
           ul {
             margin-left: 50px;
+            @media (max-width: 768px) {
+              margin-left: 0;
+              list-style-position: inside;
+            }
             li {
               font-size: 20px;
             }
