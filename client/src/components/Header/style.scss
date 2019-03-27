@@ -27,6 +27,30 @@ header {
           padding: 10px 20px;
           color: white;
         }
+        .dropMenuTop {
+          display: none;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: white 1px solid;
+          @media (max-width: 768px) {
+            display: flex;
+          }
+          .applyButton {
+            background-color: white;
+            color: #000099;
+          }
+          a {
+            padding: 0;
+            margin: 15px 10px;
+          }
+          .phoneNav {
+            margin: 0 10px 0 0;
+            i {
+              transform: scaleX(-1);
+              margin-right: 10px;
+            }
+          }
+        }
       }
     }
     @media (max-width: 1200px) {
