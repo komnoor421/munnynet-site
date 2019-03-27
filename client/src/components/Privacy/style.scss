@@ -1,5 +1,8 @@
 #privatePolicyWrapper {
   padding: 40px 0;
+  @media (max-width: 576px) {
+    padding: 20px;
+  }
   .privacyTitle {
     color: #000099;
     text-decoration: underline;
