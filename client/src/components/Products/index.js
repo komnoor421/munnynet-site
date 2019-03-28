@@ -28,7 +28,7 @@ class Products extends Component {
         </section>
         <section className='qualify3'>
           <div className='container'>
-            <h2 className='text-center'>These are the types of loans that are currently available on MunnyNest:</h2>
+            <h2 className='text-center'>These are the types of loans that are currently available from MunnyNest:</h2>
             <div className='typesList'>
               <div className='step'>
                 <span className="fa-stack fa-3x step">

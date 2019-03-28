@@ -180,7 +180,7 @@ class Contact extends Component {
         </div>
         <section className='contactPrompt'>
           <div className="container text-center">
-            <h3>You can contact us by Phone, E-mail or both. We're here to assist and answer any questions about our company & process.</h3>
+            <h3>You can contact us by phone, e-mail or both. We're here to assist and answer any questions about our company & process.</h3>
           </div>
         </section>
         <section className='contactFormSection'>

@@ -19,7 +19,7 @@ class Home extends Component {
         <div className='jumbotron text-center' style={jumboBgStyle}>
           <div className='jumboHeader'>
             <h1 className="display-4">MunnyNest Business Loans</h1>
-            <h1 className="display-3">help when Bank Loans Cannot</h1>
+            <h1 className="display-3">Help When Bank Loans Cannot</h1>
           </div>
           <div className='mainButton'>
             <Link to="/contact">
@@ -33,7 +33,7 @@ class Home extends Component {
             <h2>
               Simple, Fast and Personalized
               <br />
-              approach to get Funds that can be used to solve your cash flow needs & to cover any expenses within your business.
+              approach to get funds that can be used to solve your cash flow needs & to cover any expenses within your business.
             </h2>
           </div>
         </section>

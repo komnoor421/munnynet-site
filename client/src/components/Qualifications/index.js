@@ -23,7 +23,7 @@ class Qualifications extends Component {
         </div>
         <section className='qualify2'>
           <div className="container">
-            <h2>At MunnyNest, we work hard to get the best possible loan & offer for your Business, considering all aspects of your given information with our trusted & professional advisors.</h2>
+            <h2>At MunnyNest, we work hard to get the best possible loan & offer for your business, considering all aspects of your given information with our trusted & professional advisors.</h2>
           </div>
         </section>
         <section className='qualify3'>
@@ -58,7 +58,7 @@ class Qualifications extends Component {
         </section>
         <section id='qualify4'>
           <div className="container text-center">
-            <h2>Upon your approved qualification terms for funding, we get the "munny" to you fast at the best rates available. Our mission at MunnyNest is to help your business & services find the perfect financing option in agile time.</h2>
+            <h2>Upon your approved qualification terms for funding, we get the "munny" to you fast at the best rates available. Our mission at MunnyNest is to help your business find the perfect financing option in time.</h2>
           </div>
         </section>
       </div>
