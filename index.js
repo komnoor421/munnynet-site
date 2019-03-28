@@ -72,6 +72,7 @@ app.post('/send', (req, res) => {
         <li>Phone Number: ${req.body.phone}</li>
         <li>Email: ${req.body.email}</li>
         <li>Message: ${req.body.message}</li>
+        <li>Spanish: ${req.body.spanish ? 'Yes' : 'No'}</li>
       <ul>
    `;
 
@@ -79,6 +80,12 @@ app.post('/send', (req, res) => {
       <h2>Hello ${req.body.name}!<h2>
       <p>Thank you for your interest and submission of your pre-qual application.</p>
       <p>One of our advisors will be contacting you within 24-48 hours.</p>
+   `;
+
+   const emailHtmlTemplateConfirmationSpanish = `
+   <h2>Hola ${req.body.name}!<h2>
+   <p>Gracias por su interés y la presentación de su solicitud de precalificación.</p>
+   <p>Uno de nuestros asesores lo contactará en un plazo de 24 a 48 horas.</p>
    `;
 
    // setup email data with unicode symbols
@@ -98,6 +105,13 @@ app.post('/send', (req, res) => {
      html: emailHtmlTemplateConfirmation // html body
    };
 
+   let mailOptionsConfirmationSpanish = {
+     from: process.env.EMAIL_USERNAME, // sender address
+     to: req.body.email, // list of receivers
+     subject: 'Aplicación pre-calificación #' + req.body.id, // Subject line
+     html: emailHtmlTemplateConfirmationSpanish // html body
+   }
+
    try {
      // // send mail with defined transport object
      let infoMN = await transporter.sendMail(mailOptionsMunnyNest);
@@ -105,8 +119,14 @@ app.post('/send', (req, res) => {
      res.status(200).json({ emailSent: true, verify: true, status: 200, emailInfo: infoMN });
 
      //send confirmation email
-     let infoConfirmation = await transporter.sendMail(mailOptionsConfirmation);
-     console.log("Message sent to recipient: %s", infoConfirmation.messageId);
+     if(req.body.spanish) {
+       let infoConfirmationSpanish = await transporter.sendMail(mailOptionsConfirmationSpanish);
+       console.log("Message sent to recipient: %s", infoConfirmationSpanish.messageId);
+     } else {
+       let infoConfirmation = await transporter.sendMail(mailOptionsConfirmation);
+       console.log("Message sent to recipient: %s", infoConfirmation.messageId);
+     }
+
    } catch (err) {
      console.error(err);
      res.status(500).json({ emailSent: false, verify: true, status: 500, error: err});

@@ -6,6 +6,7 @@ import Qualifications from './components/Qualifications';
 import Products from './components/Products';
 import Contact from './components/Contact';
 import Privacy from './components/Privacy';
+import Spanish from './components/Spanish';
 
 class Routes extends React.Component {
   render() {
@@ -17,6 +18,7 @@ class Routes extends React.Component {
           <Route path='/products' component={Products} />
           <Route path='/contact' component={Contact} />
           <Route path='/privacy' component={Privacy} />
+          <Route path='/es' component={Spanish} />
         </Switch>
       </div>
     )

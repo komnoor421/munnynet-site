@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from "react-router";
 
 import canada from '../../../public/resources/images/canada.png';
 import usa from '../../../public/resources/images/usa.png';
@@ -9,6 +10,10 @@ import './style.scss';
 class Footer extends Component {
 
   render() {
+    let inSpanish = false;
+    if (this.props.location.pathname == '/es') {
+      inSpanish = true;
+    }
     return (
       <div id='footer'>
         <div className='footerContent text-center'>
@@ -19,7 +24,10 @@ class Footer extends Component {
           </div>
           <div className='copyrightWrapper'>
             <div className='copyrightContent'>
-              <p>All Loan Types are Subject to Lender Approval. Your loan agreement will identify the loan issuer prior to your signing.</p>
+              {!inSpanish ?
+                <p>All Loan Types are Subject to Lender Approval. Your loan agreement will identify the loan issuer prior to your signing.</p>
+                : <p>Cada préstamo está sujeto a la aprobación del prestamista. <br />Su conexión a MunnyNest esta encriptada de forma segura.</p>
+              }
               <p className='privacyLink'><Link to='/privacy'>Privacy Policy</Link></p>
               <div className='countries'>
                 <p><img src={usa}/>USA</p>
@@ -35,4 +43,4 @@ class Footer extends Component {
 
 }
 
-export default Footer;
+export default withRouter(Footer);
