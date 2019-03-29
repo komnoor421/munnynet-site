@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Recaptcha from 'react-recaptcha';
 
-import bg from '../../../public/resources/images/jumbo-bg.jpg';
+import bg from '../../../public/resources/images/es-jumbo-bg.jpg';
 
 import './style.scss';
 
@@ -30,7 +30,7 @@ const initialState = {
 }
 
 var jumboBgStyle = {
-  background: `url(${bg}) center -5px`,
+  background: `url(${bg}) center top`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat'
 };
@@ -180,13 +180,13 @@ class Spanish extends Component {
     return (
       <div id='homeWrapper'>
         <div className='jumbotron text-center' style={jumboBgStyle}>
-          <div className='jumboHeader'>
+          <div className='jumboHeader spanishJumbo'>
             <h1 className="display-4">Nosotros ayudamos cuando el proceso de préstamo bancario no puede</h1>
           </div>
           <div className='mainButton'>
             <button type="button" className="applyButton cta btn btn-primary" onClick={this.scrollToForm}>Empezar</button>
           </div>
-          <div className='downArrow'><i className="fas fa-chevron-down"></i></div>
+          <div className='downArrow spanishDownArrow'><i className="fas fa-chevron-down"></i></div>
         </div>
         <section id='secondaryHeaderSection'>
           <div className="container text-center">

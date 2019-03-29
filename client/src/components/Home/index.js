@@ -6,7 +6,7 @@ import bg from '../../../public/resources/images/jumbo-bg.jpg';
 import './style.scss';
 
 var jumboBgStyle = {
-  background: `url(${bg}) center -5px`,
+  background: `url(${bg}) center top`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat'
 };

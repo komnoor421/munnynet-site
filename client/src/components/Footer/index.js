@@ -26,7 +26,11 @@ class Footer extends Component {
             <div className='copyrightContent'>
               {!inSpanish ?
                 <p>All Loan Types are Subject to Lender Approval. Your loan agreement will identify the loan issuer prior to your signing.</p>
-                : <p>Cada préstamo está sujeto a la aprobación del prestamista. <br />Su conexión a MunnyNest esta encriptada de forma segura.</p>
+                :
+                <div>
+                  <p>Dependiendo de su aprobación nosotros enviamos tu préstamo rápido y listo a los mejores tarifas.</p>
+                  <p>Cada préstamo está sujeto a la aprobación del prestamista. <br />Su conexión a MunnyNest esta encriptada de forma segura.</p>
+                </div>
               }
               <p className='privacyLink'><Link to='/privacy'>Privacy Policy</Link></p>
               <div className='countries'>
