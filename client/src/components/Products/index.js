@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import bg from '../../../public/resources/images/loans-3.jpg';
+import bg from '../../../public/resources/images/loans-bg.jpg';
 
 import './style.scss';
 

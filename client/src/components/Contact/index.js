@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Recaptcha from 'react-recaptcha';
 
-import bg from '../../../public/resources/images/contact-2.jpg';
+import bg from '../../../public/resources/images/contact-bg.jpg';
 
 import './style.scss';
 

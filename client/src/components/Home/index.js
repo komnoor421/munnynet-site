@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import bg from '../../../public/resources/images/jumbo-bg.jpg';
+import bg from '../../../public/resources/images/home-bg.jpg';
 
 import './style.scss';
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Recaptcha from 'react-recaptcha';
 
-import bg from '../../../public/resources/images/es-jumbo-bg.jpg';
+import bg from '../../../public/resources/images/es-home-bg.jpg';
 
 import './style.scss';
 
