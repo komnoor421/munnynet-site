@@ -5,8 +5,11 @@ const env = require('dotenv');
 const request = require('request');
 const path = require('path');
 const port = process.env.PORT || 5000;
+const enforce = require('express-sslify');
 
 const app = express();
+
+app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
 env.config();
 
