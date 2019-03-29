@@ -13,6 +13,17 @@ var jumboBgStyle = {
 
 class Home extends Component {
 
+  constructor() {
+    super();
+
+    this.arrowClick = this.arrowClick.bind(this);
+  }
+
+  arrowClick() {
+    document.getElementById('secondaryHeaderSection').scrollIntoView(true);
+    window.scrollBy(0, -70);
+  }
+
   render() {
     return (
       <div id='homeWrapper'>
@@ -26,7 +37,7 @@ class Home extends Component {
               <button type="button" className="applyButton cta btn btn-primary">Get Started</button>
             </Link>
           </div>
-          <div className='downArrow'><i className="fas fa-chevron-down"></i></div>
+          <div className='downArrow' onClick={this.arrowClick}><i className="fas fa-chevron-down"></i></div>
         </div>
         <section id='secondaryHeaderSection'>
           <div className="container text-center">

@@ -47,6 +47,7 @@ class Contact extends Component {
     this.sendEmail = this.sendEmail.bind(this);
     this.recaptchaLoad = this.recaptchaLoad.bind(this);
     this.recaptchaVerify = this.recaptchaVerify.bind(this);
+    this.arrowClick = this.arrowClick.bind(this);
   }
 
   handleChange(e) {
@@ -167,6 +168,11 @@ class Contact extends Component {
     }
   }
 
+  arrowClick() {
+    document.getElementById('contactFirstSection').scrollIntoView(true);
+    window.scrollBy(0, -70);
+  }
+
   render() {
     const { name, bizname, biztype, amount, phone, email, message, loading, emailSuccess, emailFail, recaptcha, server } = this.state;
     let isValid = this.validate();
@@ -176,9 +182,9 @@ class Contact extends Component {
           <div className='jumboHeader contactJumboHeader'>
             <h1 className="display-3">Contact Us</h1>
           </div>
-          <div className='downArrow contactArrow'><i className="fas fa-chevron-down"></i></div>
+          <div className='downArrow contactArrow' onClick={this.arrowClick}><i className="fas fa-chevron-down"></i></div>
         </div>
-        <section className='contactPrompt'>
+        <section id='contactFirstSection' className='contactPrompt'>
           <div className="container text-center">
             <h3>You can contact us by phone, e-mail or both. We're here to assist and answer any questions about our company & process.</h3>
           </div>

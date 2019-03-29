@@ -13,6 +13,17 @@ var contentBgStyle = {
 
 class Products extends Component {
 
+  constructor() {
+    super();
+
+    this.arrowClick = this.arrowClick.bind(this);
+  }
+
+  arrowClick() {
+    document.getElementById('productFirstSection').scrollIntoView(true);
+    window.scrollBy(0, -70);
+  }
+
   render() {
     return (
       <div id='productsWrapper'>
@@ -20,9 +31,9 @@ class Products extends Component {
           <div className='jumboHeader'>
             <h1 className="display-3">Products</h1>
           </div>
-          <div className='downArrow productsDownArrow'><i className="fas fa-chevron-down"></i></div>
+          <div className='downArrow productsDownArrow' onClick={this.arrowClick}><i className="fas fa-chevron-down"></i></div>
         </div>
-        <section className='qualify2'>
+        <section id='productFirstSection' className='qualify2'>
           <div className="container">
             <h2>Here at MunnyNest, we're most proud of our personal & professional advisors to review your business needs and understand the nature of your business to be able to provide you with the best options available.</h2>
           </div>

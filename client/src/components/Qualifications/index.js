@@ -13,6 +13,17 @@ var contentBgStyle = {
 
 class Qualifications extends Component {
 
+  constructor() {
+    super();
+
+    this.arrowClick = this.arrowClick.bind(this);
+  }
+
+  arrowClick() {
+    document.getElementById('qualifyFirstSection').scrollIntoView(true);
+    window.scrollBy(0, -70);
+  }
+
   render() {
     return (
       <div id='qualificationsWrapper'>
@@ -20,9 +31,9 @@ class Qualifications extends Component {
           <div className='jumboHeader align-middle'>
             <h1 className="display-3">Qualifications</h1>
           </div>
-          <div className='downArrow qualifyDownArrow'><i className="fas fa-chevron-down"></i></div>
+          <div className='downArrow qualifyDownArrow' onClick={this.arrowClick}><i className="fas fa-chevron-down"></i></div>
         </div>
-        <section className='qualify2'>
+        <section id='qualifyFirstSection' className='qualify2'>
           <div className="container">
             <h2>At MunnyNest, we work hard to get the best possible loan & offer for your business, considering all aspects of your given information with our trusted & professional advisors.</h2>
           </div>

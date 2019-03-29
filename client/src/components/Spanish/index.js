@@ -49,6 +49,7 @@ class Spanish extends Component {
     this.recaptchaLoad = this.recaptchaLoad.bind(this);
     this.recaptchaVerify = this.recaptchaVerify.bind(this);
     this.scrollToForm = this.scrollToForm.bind(this);
+    this.arrowClick = this.arrowClick.bind(this);
   }
 
   handleChange(e) {
@@ -174,6 +175,11 @@ class Spanish extends Component {
     window.scrollBy(0, -70);
   }
 
+  arrowClick() {
+    document.getElementById('secondaryHeaderSection').scrollIntoView(true);
+    window.scrollBy(0, -70);
+  }
+
   render() {
     const { name, bizname, biztype, amount, phone, email, message, loading, emailSuccess, emailFail, recaptcha, server } = this.state;
     let isValid = this.validate();
@@ -186,7 +192,7 @@ class Spanish extends Component {
           <div className='mainButton'>
             <button type="button" className="applyButton cta btn btn-primary" onClick={this.scrollToForm}>Empezar</button>
           </div>
-          <div className='downArrow spanishDownArrow'><i className="fas fa-chevron-down"></i></div>
+          <div className='downArrow spanishDownArrow' onClick={this.arrowClick}><i className="fas fa-chevron-down"></i></div>
         </div>
         <section id='secondaryHeaderSection'>
           <div className="container text-center">
