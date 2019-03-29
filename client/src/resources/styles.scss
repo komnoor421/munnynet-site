@@ -1,10 +1,16 @@
 body {
   @extend %fontRegular;
   h2 {
-    color: black;
+    color: #000099;
   }
-  h1 {
-    // margin-bottom: 0
+  h3 {
+    color: #000099;
+  }
+  ol {
+    color: #000099;
+  }
+  ul {
+    color: #000099;
   }
 }
 

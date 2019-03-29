@@ -31,7 +31,13 @@
     .productsDownArrow {
       position: absolute;
       bottom: 20px;
-      left: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      @media (max-width: 768px) {
+        left: 50px;
+        transform: none;
+      }
+
       i {
         color: white;
         font-size: 40px;
@@ -52,6 +58,7 @@
       .step {
         display: flex;
         margin-bottom: 30px;
+        color: #000099;
         @media (max-width: 768px) {
           flex-direction: column;
           align-items: center;
