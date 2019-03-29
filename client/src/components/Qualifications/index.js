@@ -6,7 +6,7 @@ import bg from '../../../public/resources/images/jumbo-bg-2.jpg';
 import './style.scss';
 
 var contentBgStyle = {
-  background: `url(${bg}) center top`,
+  background: `url(${bg}) center center`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat'
 };
@@ -20,6 +20,7 @@ class Qualifications extends Component {
           <div className='jumboHeader align-middle'>
             <h1 className="display-3">Qualifications</h1>
           </div>
+          <div className='downArrow qualifyDownArrow'><i className="fas fa-chevron-down"></i></div>
         </div>
         <section className='qualify2'>
           <div className="container">

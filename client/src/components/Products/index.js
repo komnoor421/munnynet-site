@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import bg from '../../../public/resources/images/loans.jpg';
+import bg from '../../../public/resources/images/loans-3.jpg';
 
 import './style.scss';
 
 var contentBgStyle = {
-  background: `url(${bg}) center center`,
+  background: `url(${bg}) center top`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat'
 };
@@ -20,6 +20,7 @@ class Products extends Component {
           <div className='jumboHeader'>
             <h1 className="display-3">Products</h1>
           </div>
+          <div className='downArrow productsDownArrow'><i className="fas fa-chevron-down"></i></div>
         </div>
         <section className='qualify2'>
           <div className="container">

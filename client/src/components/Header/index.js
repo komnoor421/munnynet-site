@@ -48,7 +48,7 @@ class Header extends Component {
       <header>
         <div className='headerWrapper container-fluid'>
           <nav className={inSpanish ? 'headerLeft spanishHeadLeft' : 'headerLeft'}>
-            <Link to='/'>
+            <Link to='/' onClick={this.closeMenu}>
               <img className='logo' src={logo} />
             </Link>
             {!inSpanish &&
