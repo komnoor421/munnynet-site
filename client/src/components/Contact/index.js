@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Recaptcha from 'react-recaptcha';
 
-import bg from '../../../public/resources/images/contact.jpg';
+import bg from '../../../public/resources/images/contact-2.jpg';
 
 import './style.scss';
 
@@ -173,10 +173,10 @@ class Contact extends Component {
     return (
       <div id='contactUsWrapper'>
         <div className='jumbotron text-center' style={contentBgStyle}>
-          <div className='jumboHeader'>
+          <div className='jumboHeader contactJumboHeader'>
             <h1 className="display-3">Contact Us</h1>
           </div>
-          <div className='downArrow'><i className="fas fa-chevron-down"></i></div>
+          <div className='downArrow contactArrow'><i className="fas fa-chevron-down"></i></div>
         </div>
         <section className='contactPrompt'>
           <div className="container text-center">
