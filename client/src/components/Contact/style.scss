@@ -38,6 +38,9 @@
   .contactInfoSection {
     display: flex;
     padding: 0;
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
     a {
       display: flex;
       width: 50%;
@@ -47,20 +50,46 @@
       line-height: 3.5;
       text-decoration: none;
       color: white;
-      transition: background 100ms ease-in-out;
+      @media (max-width: 992px) {
+        width: 100%;
+        line-height: 2.5;
+      }
+      @media (max-width: 576px) {
+        font-size: 25px;
+      }
       &.phoneButton {
         border-right: 1px solid white;
+        @media (max-width: 992px) {
+          border-right: none;
+          border-bottom: 1px solid white;
+        }
       }
-      &:hover {
-        background: white;
-        color: #000099;
+    }
+    .eButton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      font-size: 35px;
+      background: #000099;
+      color: white;
+      cursor: pointer;
+      @media (max-width: 992px) {
+        width: 100%;
+        padding: 20px 0;
+      }
+      @media (max-width: 576px) {
+        padding: 15px 0;
+      }
+      .eImageTag {
+        width: 400px;
+        @media (max-width: 576px) {
+          width: 300px;
+        }
       }
     }
   }
   .contactPrompt {
     padding: 35px 0 0 0;
-    h3 {
-
-    }
   }
 }

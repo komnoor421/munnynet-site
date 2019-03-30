@@ -185,7 +185,7 @@ class Spanish extends Component {
     let isValid = this.validate();
     return (
       <div id='homeWrapper'>
-        <div className='jumbotron text-center' style={jumboBgStyle}>
+        <div className='jumbotron text-center contactJumbotron' style={jumboBgStyle}>
           <div className='jumboHeader spanishJumbo'>
             <h1 className="display-4">Nosotros ayudamos cuando el proceso de préstamo bancario no puede</h1>
           </div>

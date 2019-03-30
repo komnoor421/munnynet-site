@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Recaptcha from 'react-recaptcha';
 
 import bg from '../../../public/resources/images/contact-bg.jpg';
+import eImage from '../../../public/resources/images/e-image.png';
 
 import './style.scss';
 
@@ -184,7 +185,15 @@ class Contact extends Component {
           </div>
           <div className='downArrow contactArrow' onClick={this.arrowClick}><i className="fas fa-chevron-down"></i></div>
         </div>
-        <section id='contactFirstSection' className='contactPrompt'>
+        <section id='contactFirstSection' className='contactInfoSection'>
+          <a href='tel:8336869678' className='phoneButton'>
+            (833) MUN-YNST
+          </a>
+          <div className='eButton'>
+            <img src={eImage} className='eImageTag'/>
+          </div>
+        </section>
+        <section className='contactPrompt'>
           <div className="container text-center">
             <h3>You can contact us by phone, e-mail or both. We're here to assist and answer any questions about our company & process.</h3>
           </div>
