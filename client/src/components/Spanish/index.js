@@ -30,7 +30,7 @@ const initialState = {
 }
 
 var jumboBgStyle = {
-  background: `url(${bg}) center top`,
+  background: `url(${bg}) left top`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat'
 };
