@@ -75,6 +75,9 @@
       color: white;
       position: relative;
       cursor: pointer;
+      @media (max-width: 1160px) {
+        pointer-events: none;
+      }
       @media (max-width: 992px) {
         width: 100%;
         padding: 20px 0;
