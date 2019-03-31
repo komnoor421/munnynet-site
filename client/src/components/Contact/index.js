@@ -26,7 +26,8 @@ const initialState = {
   server: {
     hasError: false,
     message: ''
-  }
+  },
+  copied: 'Click to Copy'
 }
 
 const contentBgStyle = {
@@ -49,6 +50,8 @@ class Contact extends Component {
     this.recaptchaLoad = this.recaptchaLoad.bind(this);
     this.recaptchaVerify = this.recaptchaVerify.bind(this);
     this.arrowClick = this.arrowClick.bind(this);
+    this.copyToClipboard = this.copyToClipboard.bind(this);
+    this.copyMouseOut = this.copyMouseOut.bind(this);
   }
 
   handleChange(e) {
@@ -174,8 +177,32 @@ class Contact extends Component {
     window.scrollBy(0, -70);
   }
 
+  copyToClipboard() {
+    const el = document.createElement('textarea');
+    const ext = 'com';
+    const name = 'info';
+    const domain = 'munnynest';
+    el.value = name + '@' + domain + '.' + ext;
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    this.setState({
+      copied: 'Copied to Clipboard!'
+    });
+  }
+
+  copyMouseOut() {
+    this.setState({
+      copied: 'Click to Copy'
+    });
+  }
+
   render() {
-    const { name, bizname, biztype, amount, phone, email, message, loading, emailSuccess, emailFail, recaptcha, server } = this.state;
+    const { name, bizname, biztype, amount, phone, email, message, loading, emailSuccess, emailFail, recaptcha, server, copied } = this.state;
     let isValid = this.validate();
     return (
       <div id='contactUsWrapper'>
@@ -189,7 +216,8 @@ class Contact extends Component {
           <a href='tel:8336869678' className='phoneButton'>
             (833) MUN-YNST
           </a>
-          <div className='eButton'>
+          <div id='eCopy' className='eButton' onClick={this.copyToClipboard} onMouseLeave={this.copyMouseOut}>
+            <span className="tooltiptext">{copied}</span>
             <img src={eImage} className='eImageTag'/>
           </div>
         </section>
@@ -237,25 +265,25 @@ class Contact extends Component {
               />
               {emailSuccess &&
                 <div className="alert alert-success fade show text-center" role="alert">
-                <strong>Your submission has been sent!</strong>
-              </div>}
+                  <strong>Your submission has been sent!</strong>
+                </div>}
               {emailFail &&
                 <div className="alert alert-danger fade show text-center" role="alert">
-                <strong>There was a problem sending your Email. Please try again later.</strong>
-              </div>}
+                  <strong>There was a problem sending your Email. Please try again later.</strong>
+                </div>}
               {server.hasError && server.message &&
                 <div className="alert alert-danger fade show text-center" role="alert">
-                <strong>{server.message}</strong>
-              </div>}
+                  <strong>{server.message}</strong>
+                </div>}
               {!recaptcha.hasResponse && recaptcha.errorMessage &&
                 <div className="alert alert-danger fade show text-center" role="alert">
-                <strong>{recaptcha.errorMessage}</strong>
-              </div>}
+                  <strong>{recaptcha.errorMessage}</strong>
+                </div>}
               <div className='submitButtonWrapper'>
-              <button disabled={!isValid} id='submitFormButton' type="submit" className="applyButton btn btn-primary align-items-center">
-                {loading && <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>}
-                Apply Now
-              </button>
+                <button disabled={!isValid} id='submitFormButton' type="submit" className="applyButton btn btn-primary align-items-center">
+                  {loading && <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>}
+                  Apply Now
+                </button>
               </div>
             </form>
           </div>

@@ -73,6 +73,7 @@
       font-size: 35px;
       background: #000099;
       color: white;
+      position: relative;
       cursor: pointer;
       @media (max-width: 992px) {
         width: 100%;
@@ -80,6 +81,35 @@
       }
       @media (max-width: 576px) {
         padding: 15px 0;
+      }
+      &:hover {
+        .tooltiptext {
+          visibility: visible;
+        }
+      }
+      .tooltiptext {
+        visibility: hidden;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        font-size: 25px;
+        padding: 10px 15px;
+        position: absolute;
+        z-index: 1;
+        bottom: 95px;
+        left: 50%;
+        transform: translateX(-50%);
+        &:after {
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          margin-left: -10px;
+          border-width: 10px;
+          border-style: solid;
+          border-color: black transparent transparent transparent;
+        }
       }
       .eImageTag {
         width: 400px;
