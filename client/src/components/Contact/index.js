@@ -265,7 +265,7 @@ class Contact extends Component {
               />
               {emailSuccess &&
                 <div className="alert alert-success fade show text-center" role="alert">
-                  <strong>Your submission has been sent!</strong>
+                  <strong>Thank You! Your submission has been sent!</strong>
                 </div>}
               {emailFail &&
                 <div className="alert alert-danger fade show text-center" role="alert">

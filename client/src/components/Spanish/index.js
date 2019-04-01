@@ -284,7 +284,7 @@ class Spanish extends Component {
               />
               {emailSuccess &&
                 <div className="alert alert-success fade show text-center" role="alert">
-                  <strong>Su envío ha sido enviado!</strong>
+                  <strong>Gracias! Su envío ha sido enviado!</strong>
                 </div>}
               {emailFail &&
                 <div className="alert alert-danger fade show text-center" role="alert">
