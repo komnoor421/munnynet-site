@@ -13,8 +13,21 @@
   }
   ul {
     margin-left: 50px;
+    color: #212529;
   }
   a {
     color: #000099;
+  }
+  .e1 {
+    display: flex;
+    align-items: center;
+    img {
+      margin-left: 3px;
+    }
+  }
+  .e2 {
+    img {
+      margin-left: -2px;
+    }
   }
 }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import eImage from '../../../public/resources/images/e-privacy.png';
+
 import './style.scss';
 
 class Privacy extends Component {
@@ -49,7 +51,7 @@ class Privacy extends Component {
         <p>announcements of certain information. Users may opt-out of receiving any or all communications from third-party partners of Munny Nest LLC by contacting us here:</p>
         <ul>
           <li>Web page: <Link to='/'>www.munnynest.com</Link></li>
-          {/* <li>Email: info@munnynest.com</li> */}
+          <li className='e1'>Email: <img src={eImage} /></li>
           <li>Phone: 833.686.9648</li>
         </ul>
         <h4>E-mail Communications</h4>
@@ -64,11 +66,11 @@ class Privacy extends Component {
           <br />
           Decatur, Georgia 30033
         </p>
-        {/* <p>
+        <p className='e2'>
           Email Address:
           <br />
-          info@munnynest.com
-        </p> */}
+          <img src={eImage} />
+        </p>
         <p>
           Telephone Number:
           <br />
