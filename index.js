@@ -79,17 +79,76 @@ app.post('/send', (req, res) => {
       <ul>
    `;
 
+   const ext = 'com';
+   const name = 'info';
+   const domain = 'munnynest';
+   const e = name + '@' + domain + '.' + ext;
+
    const emailHtmlTemplateConfirmation = `
-      <h2>Hello ${req.body.name}!<h2>
-      <p>Thank you for your interest and submission of your pre-qual application.</p>
-      <p>One of our advisors will be contacting you within 24-48 hours.</p>
-   `;
+   <body style="padding:0; margin:0; width:100% !important; -webkit-text; size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0; @import url('https://fonts.googleapis.com/css?family=Poppins');">
+   <table border="0" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0" width="100%">
+       <tbody>
+         <tr>
+             <td align="left" valign="top" style="border-collapse: collapse; padding-bottom: 15px;">
+               <h3 style="font-family: 'Poppins', sans-serif;">Hello ${req.body.name}!</h3>
+               <p style="font-family: 'Poppins', sans-serif;">Thank you for your interest and submission of your pre-qual application. <br> One of our advisors will be contacting you within 24-48 hours.</p>
+             </td>
+         </tr>
+       </tbody>
+   </table>
+   <table border="0" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0" width="100%">
+       <tbody>
+         <tr>
+             <td align="left" style="border-collapse: collapse;" width='140'>
+               <img alt='Logo Not Found!' src='https://drive.google.com/uc?export=download&id=1-KqUGPurnSwYLByH2BeYqLulvW8i4cVf' width="125"></img>
+             </td>
+             <td style="border-collapse: collapse;">
+               <h4 style="margin: 0px; font-family: 'Poppins', sans-serif;">Munny Nest LLC</h4>
+               <p style="margin: 0px; font-family: 'Poppins', sans-serif;">
+                 O: 833.686.9678
+                 <br>
+                 E: ${e}
+                 <br>
+                 W: www.munnynest.com
+               </p>
+             </td>
+         </tr>
+       </tbody>
+     </table>
+    </body>`;
 
    const emailHtmlTemplateConfirmationSpanish = `
-   <h2>Hola ${req.body.name}!<h2>
-   <p>Gracias por su interés y la presentación de su solicitud de precalificación.</p>
-   <p>Uno de nuestros asesores lo contactará en un plazo de 24 a 48 horas.</p>
-   `;
+   <body style="padding:0; margin:0; width:100% !important; -webkit-text; size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0; @import url('https://fonts.googleapis.com/css?family=Poppins');">
+   <table border="0" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0" width="100%">
+       <tbody>
+         <tr>
+             <td align="left" valign="top" style="border-collapse: collapse; padding-bottom: 15px;">
+               <h3 style="font-family: 'Poppins', sans-serif;">Hola ${req.body.name}!</h3>
+               <p style="font-family: 'Poppins', sans-serif;">Gracias por su interés y la presentación de su solicitud de precalificación.<br> Uno de nuestros asesores lo contactará en un plazo de 24 a 48 horas.</p>
+             </td>
+         </tr>
+       </tbody>
+   </table>
+   <table border="0" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0" width="100%">
+       <tbody>
+         <tr>
+             <td align="left" style="border-collapse: collapse;" width='140'>
+               <img alt='Logo Not Found!' src='https://drive.google.com/uc?export=download&id=1-KqUGPurnSwYLByH2BeYqLulvW8i4cVf' width="125"></img>
+             </td>
+             <td style="border-collapse: collapse;">
+               <h4 style="margin: 0px; font-family: 'Poppins', sans-serif;">Munny Nest LLC</h4>
+               <p style="margin: 0px; font-family: 'Poppins', sans-serif;">
+                 O: 833.686.9678
+                 <br>
+                 E: ${e}
+                 <br>
+                 W: www.munnynest.com
+               </p>
+             </td>
+         </tr>
+       </tbody>
+     </table>
+    </body>`;
 
    // setup email data with unicode symbols
    let mailOptionsMunnyNest = {
