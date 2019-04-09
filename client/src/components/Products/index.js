@@ -29,7 +29,7 @@ class Products extends Component {
       <div id='productsWrapper'>
         <div className='jumbotron text-center' style={contentBgStyle}>
           <div className='jumboHeader'>
-            <h1 className="display-3">Products</h1>
+            <h1 className="display-3">Loans & <br />Products</h1>
           </div>
           <div className='downArrow productsDownArrow' onClick={this.arrowClick}><i className="fas fa-chevron-down"></i></div>
         </div>
@@ -40,7 +40,7 @@ class Products extends Component {
         </section>
         <section className='qualify3'>
           <div className='container'>
-            <h2 className='text-center'>These are the types of loans that are currently available from MunnyNest:</h2>
+            <h2 className='text-center'>These are the types of loans & products that are currently available from MunnyNest:</h2>
             <div className='typesList'>
               <div className='step'>
                 <span className="fa-stack fa-3x step">
@@ -63,6 +63,7 @@ class Products extends Component {
                 <div className='stepPoints'>
                   <h3>Revenue Assurance (RA) or <br />Merchant Cash Advance (MCA)</h3>
                   <ul>
+                    <li>Purchase & Sale Agreement - Not a Loan Product</li>
                     <li>Lump Sum Advance based on Future Revenues</li>
                     <li>Higher Cost $$$</li>
                   </ul>
