@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import { Layout } from './Layout
+import { Layout } from './Layout';
 import ReactGA from 'react-ga';
 
 export class App extends React.Component {
