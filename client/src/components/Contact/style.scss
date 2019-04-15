@@ -75,9 +75,6 @@
       color: white;
       position: relative;
       cursor: pointer;
-      @media (max-width: 1160px) {
-        pointer-events: none;
-      }
       @media (max-width: 992px) {
         width: 100%;
         padding: 20px 0;
@@ -103,6 +100,10 @@
         bottom: 95px;
         left: 50%;
         transform: translateX(-50%);
+        @media (max-width: 992px) {
+          position: fixed;
+          bottom: 20px;
+        }
         &:after {
           content: "";
           position: absolute;
@@ -112,6 +113,9 @@
           border-width: 10px;
           border-style: solid;
           border-color: black transparent transparent transparent;
+          @media (max-width: 992px) {
+            content: none;
+          }
         }
       }
       .eImageTag {

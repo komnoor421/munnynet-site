@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Recaptcha from 'react-recaptcha';
+import Clipboard from 'react-clipboard.js';
 
 import bg from '../../../public/resources/images/contact-bg.jpg';
 import eImage from '../../../public/resources/images/e-image.png';
@@ -50,8 +51,9 @@ class Contact extends Component {
     this.recaptchaLoad = this.recaptchaLoad.bind(this);
     this.recaptchaVerify = this.recaptchaVerify.bind(this);
     this.arrowClick = this.arrowClick.bind(this);
-    this.copyToClipboard = this.copyToClipboard.bind(this);
-    this.copyMouseOut = this.copyMouseOut.bind(this);
+    this.copyOnSuccess = this.copyOnSuccess.bind(this);
+    this.copyOnMouseLeave = this.copyOnMouseLeave.bind(this);
+    this.getTextToCopy = this.getTextToCopy.bind(this);
   }
 
   handleChange(e) {
@@ -177,28 +179,23 @@ class Contact extends Component {
     window.scrollBy(0, -70);
   }
 
-  copyToClipboard() {
-    const el = document.createElement('textarea');
-    const ext = 'com';
-    const name = 'info';
-    const domain = 'munnynest';
-    el.value = name + '@' + domain + '.' + ext;
-    el.setAttribute('readonly', '');
-    el.style.position = 'absolute';
-    el.style.left = '-9999px';
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand('copy');
-    document.body.removeChild(el);
+  copyOnMouseLeave() {
+    this.setState({
+      copied: 'Click to Copy'
+    });
+  }
+
+  copyOnSuccess() {
     this.setState({
       copied: 'Copied to Clipboard!'
     });
   }
 
-  copyMouseOut() {
-    this.setState({
-      copied: 'Click to Copy'
-    });
+  getTextToCopy() {
+    const ext = 'com';
+    const name = 'info';
+    const domain = 'munnynest';
+    return name + '@' + domain + '.' + ext;
   }
 
   render() {
@@ -216,10 +213,16 @@ class Contact extends Component {
           <a href='tel:8336869678' className='phoneButton'>
             (833) MUN-YNST
           </a>
-          <div id='eCopy' className='eButton' onClick={this.copyToClipboard} onMouseLeave={this.copyMouseOut}>
+          <Clipboard
+            component="div"
+            button-className="eButton"
+            option-text={this.getTextToCopy}
+            onSuccess={this.copyOnSuccess}
+            button-onMouseLeave={this.copyOnMouseLeave}
+          >
             <span className="tooltiptext">{copied}</span>
             <img src={eImage} className='eImageTag'/>
-          </div>
+          </Clipboard>
         </section>
         <section className='contactPrompt'>
           <div className="container text-center">
