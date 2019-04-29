@@ -18,9 +18,12 @@ class Footer extends Component {
       <div id='footer'>
         <div className='footerContent text-center'>
           <div className='social'>
-            <i className="fab fa-facebook-square"></i>
-            <i className="fab fa-linkedin"></i>
-            <i className="fab fa-twitter-square"></i>
+            <a href='https://www.facebook.com/munnynest'>
+              <i className="fab fa-facebook-square"></i>
+            </a>
+            <a href='https://www.linkedin.com/company/munnynest-llc'>
+              <i className="fab fa-linkedin"></i>
+            </a>
           </div>
           <div className='copyrightWrapper'>
             <div className='copyrightContent'>
