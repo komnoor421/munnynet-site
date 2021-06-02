@@ -11,7 +11,7 @@ class Privacy extends Component {
     return (
       <div id='privatePolicyWrapper' className='container'>
         <h1 className='privacyTitle text-center'>Privacy Policy</h1>
-        <h5 className='effective text-center'>Effective as of March 19, 2019</h5>
+        <h5 className='effective text-center'>Effective as of May 26, 2021</h5>
         <h4>Overview</h4>
         <p>Protecting your private information is our priority. This Statement of Privacy applies to <Link to='/'>munnynest.com</Link> and Munny Nest LLC and governs data collection and usage. For the purposes of this Privacy Policy, unless otherwise noted, all references to Munny Nest LLC include <Link to='/'>munnynest.com</Link>. The Munny Nest LLC website is a Small Business Loans site. By using the Munny Nest LLC website, you consent to the data practices described in this statement.</p>
         <h4>Collection of your Personal Information</h4>
@@ -63,8 +63,6 @@ class Privacy extends Component {
         <p>Munny Nest LLC welcomes your questions or comments regarding this Statement of Privacy. If you believe that Munny Nest LLC has not adhered to this Statement, please contact Munny Nest LLC at:</p>
         <p>
           Munny Nest LLC
-          <br />
-          Decatur, Georgia 30033
         </p>
         <p className='e2'>
           Email Address:
