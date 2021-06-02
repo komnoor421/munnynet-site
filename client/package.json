@@ -4,6 +4,10 @@
     "dev": "webpack-dev-server --mode development --open",
     "build:prod": "webpack --mode production"
   },
+  "engines": {
+    "npm": "6.x",
+    "node": "10.x"
+  }
   "repository": {
     "type": "git",
     "url": "git+https://github.com/komnoor421/munnynet-site.git"
