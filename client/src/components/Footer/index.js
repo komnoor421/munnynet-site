@@ -40,7 +40,7 @@ class Footer extends Component {
                 <p><img src={usa}/>USA</p>
                 <p><img src={canada}/>Canada</p>
               </div>
-              <p>&copy; 2019 MunnyNest</p>
+              <p>&copy; 2021 MunnyNest</p>
             </div>
           </div>
         </div>

@@ -29,13 +29,13 @@ class Home extends Component {
       <div id='homeWrapper'>
         <div className='jumbotron text-center' style={jumboBgStyle}>
           <div className='jumboHeader'>
-            <h1 className="display-4">MunnyNest Business Loans</h1>
+            <h1 className="display-4">MunnyNest<br/>Business Loans</h1>
             <h1 className="display-3">Help When Bank Loans Cannot</h1>
-          </div>
-          <div className='mainButton'>
-            <Link to="/contact">
-              <button type="button" className="applyButton cta btn btn-primary">Get Started</button>
-            </Link>
+            <div className='mainButton'>
+              <Link to="/contact">
+                <button type="button" className="applyButton cta btn btn-primary">Get Started</button>
+              </Link>
+            </div>
           </div>
           <div className='downArrow' onClick={this.arrowClick}><i className="fas fa-chevron-down"></i></div>
         </div>
