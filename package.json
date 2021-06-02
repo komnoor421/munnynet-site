@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "MunnyNest Website",
   "main": "index.js",
+  "engines": {
+    "npm": "6.x",
+    "node": "10.x"
+  },
   "scripts": {
     "start": "node index.js",
     "dev": "concurrently \"npm run client-dev\" \"npm run server-dev\"",
