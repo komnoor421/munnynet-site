@@ -152,7 +152,7 @@ app.post('/send', (req, res) => {
 
    // setup email data with unicode symbols
    let mailOptionsMunnyNest = {
-     from: e, // sender address
+     from: 'MunnyNest Info <' + e + '>', // sender address
      to: e, // list of receivers
      subject: 'New Prospect - ' + req.body.name, // Subject line
      html: emailHtmlTemplateMunnyNest // html body
@@ -161,14 +161,14 @@ app.post('/send', (req, res) => {
    //console.log("Recipient email", req.body.email);
 
    let mailOptionsConfirmation = {
-     from: e, // sender address
+     from: 'MunnyNest Info <' + e + '>', // sender address
      to: req.body.email, // list of receivers
      subject: 'Pre-Qual Application #' + req.body.id, // Subject line
      html: emailHtmlTemplateConfirmation // html body
    };
 
    let mailOptionsConfirmationSpanish = {
-     from: e, // sender address
+     from: 'MunnyNest Info <' + e + '>', // sender address
      to: req.body.email, // list of receivers
      subject: 'Aplicación pre-calificación #' + req.body.id, // Subject line
      html: emailHtmlTemplateConfirmationSpanish // html body
