@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const mg = require('nodemailer-mailgun-transport')
 const env = require('dotenv');
 const request = require('request');
 const path = require('path');
@@ -48,21 +49,31 @@ app.post('/send', (req, res) => {
   }
 
   async function main() {
+
+    const auth = {
+      auth: {
+        api_key: process.env.MAILGUN_API_KEY,
+        domain: process.env.MAILGUN_DOMAIN
+      }
+    }
+
     // create reusable transporter object using the default SMTP transport
-   let transporter = nodemailer.createTransport({
-     host: process.env.EMAIL_HOST,
-     port: process.env.EMAIL_PORT,
-     secure: false, // true for 465, false for other ports
-     auth: {
-       user: process.env.EMAIL_USERNAME,
-       pass: process.env.EMAIL_PASSWORD
-     },
-     tls: {
-       rejectUnauthorized: true
-     },
-     ignoreTLS: false,
-     requireTLS: true
-   });
+   let transporter = nodemailer.createTransport(mg(auth));
+    //  {
+    //  host: process.env.EMAIL_HOST,
+    //  port: process.env.EMAIL_PORT,
+    //  secure: false, // true for 465, false for other ports
+    //  auth: {
+    //    user: process.env.EMAIL_USERNAME,
+    //    pass: process.env.EMAIL_PASSWORD
+    //  },
+    //  tls: {
+    //    rejectUnauthorized: true
+    //  },
+    //  ignoreTLS: false,
+    //  requireTLS: true
+    // }
+
 
    const emailHtmlTemplateMunnyNest = `
       <h3>New Prospect<h3>
